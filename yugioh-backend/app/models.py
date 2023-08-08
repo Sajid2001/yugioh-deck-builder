@@ -2,7 +2,6 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
-# potentially add marshmellow schemas in the future
 
 class Deck(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,14 +9,14 @@ class Deck(db.Model):
     is_public = db.Column(db.Boolean, default=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     sections = db.relationship('DeckSection')
-    #user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     def serialize(self):
         return {
             'id': self.id,
             'name': self.name,
             'is_public':self.is_public,
             'date_created': self.date_created,
-            #'user_id': self.user_id
+            'user_id': self.user_id
         }
     
 class DeckSection(db.Model):
@@ -33,6 +32,7 @@ class DeckSection(db.Model):
             'name': self.name,
             'max_cards': self.max_cards,
             'deck_id': self.deck_id,
+            'cards':[card.serialize() for card in self.cards]
         }
 
 class DeckCard(db.Model):
@@ -40,6 +40,10 @@ class DeckCard(db.Model):
     name = db.Column(db.String(150))
     url = db.Column(db.String(150))
     type = db.Column(db.String(150))
+    desc = db.Column(db.String(500))
+    attack = db.Column(db.Integer)
+    defense = db.Column(db.Integer)
+    level = db.Column(db.Integer)
     quantity = db.Column(db.Integer)
     deck_id = db.Column(db.Integer, db.ForeignKey('deck.id'))
     section_id = db.Column(db.Integer, db.ForeignKey('deck_section.id'))
@@ -50,6 +54,10 @@ class DeckCard(db.Model):
             'name':self.name,
             'url' : self.url,
             'type': self.type,
+            'desc': self.desc,
+            'attack': self.attack,
+            'defense': self.defense,
+            'level':self.level,
             'quantity': self.quantity,
             'deck_id' :self.deck_id,
             'section_id': self.section_id,
@@ -77,4 +85,4 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150))
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
-    #decks = db.relationship('Deck')
+    decks = db.relationship('Deck')
