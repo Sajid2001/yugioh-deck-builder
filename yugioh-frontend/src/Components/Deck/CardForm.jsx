@@ -23,14 +23,14 @@ export default function CardForm({section}) {
     }
 
   return (
-    <div className='m-3 bg-teal-200 rounded-md p-3'>
+    <div className='m-3 bg-amber-200 rounded-md p-3'>
         <h1 className='text-xl mb-4'>
             Add New Card
         </h1>
         <div className="mb-4">
             <input value={search} onChange={(e) => {setSearch(e.target.value)}} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cardName" type="text" placeholder="Card Name"/>
         </div>
-        <button onClick={searchCard} className='w-full p-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition-all ease-in transition-duration-200 text-white'>Search</button>
+        <button onClick={searchCard} className='w-full p-3 rounded-lg bg-orange-500 hover:bg-orange-700 transition-all ease-in transition-duration-200 text-white'>Search</button>
         {searchResult && <SearchResult card={searchResult} section = {section}/>}
     </div>
   )

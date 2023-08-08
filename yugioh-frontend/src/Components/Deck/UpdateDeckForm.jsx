@@ -49,7 +49,7 @@ export default function UpdateDeckForm({id, status}) {
 
   return (
 <div class="w-full max-w-xs">
-  <form onSubmit={updateDeck} class="bg-white shadow-md rounded px-8 pt-4 pb-8 mb-4">
+  <form onSubmit={updateDeck} class="bg-amber-200 shadow-md rounded px-8 pt-4 pb-8 mb-4">
         <h2 className='text-3xl text-center my-2'>
           Update Deck
           <button onClick={handleVisible} className='p-3'>
@@ -76,7 +76,7 @@ export default function UpdateDeckForm({id, status}) {
             checked = {isPublic}
             onChange={handleToggle}
             class="sr-only peer"/>
-            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <div class="w-11 h-6 bg-orange-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"></div>
             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Set Public</span>
         </label>
         <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -91,7 +91,7 @@ export default function UpdateDeckForm({id, status}) {
         placeholder="New Name"
       />
       <div class="flex items-center justify-between">
-      <button class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+      <button class="mt-4 w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Save
       </button>
     </div>

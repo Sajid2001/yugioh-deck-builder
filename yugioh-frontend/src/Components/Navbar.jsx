@@ -11,7 +11,7 @@ export default function Navbar() {
     setMobileMenu(!mobileMenu)
   }
   return (
-    <header className="bg-white">
+    <header className="bg-amber-300">
         <nav className="flex justify-between items-center w-[92%] p-4  mx-auto">
             <a href='/' className="font-bold text-xl md:text-3xl hover:opacity-50 transition-all transition-duration-200 ease-in">
               Duel.it
@@ -20,11 +20,11 @@ export default function Navbar() {
               <div className="text-xl hidden md:flex md:flex-grow">
                 {user &&
                   <>
-                    <a href="/" className="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-500 mr-4">
+                    <a href="/" className="block mt-4 lg:inline-block lg:mt-0 hover:opacity-70 mr-4">
                       My Decks
                     </a>
                     
-                    <a href="/decks/public" className="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-500 mr-4">
+                    <a href="/decks/public" className="block mt-4 lg:inline-block lg:mt-0 hover:opacity-70 mr-4">
                       Public Decks
                     </a>
                   </>
@@ -41,7 +41,7 @@ export default function Navbar() {
               {user &&
                 <>
                   <div className='text-sm md:text-lg hidden md:flex md:flex-grow'>{user.username}</div>
-                  <button onClick={logout} className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec] md:text-lg text-xs hidden md:flex md:flex-grow">Log Out</button>
+                  <button onClick={logout} className="bg-orange-400 hover:bg-orange-600 text-white px-5 py-2 rounded-full md:text-lg text-xs hidden md:flex md:flex-grow">Log Out</button>
                 </>
               }
                 <button onClick={openMobileMenu} className='flex flex-grow md:hidden'>
@@ -55,15 +55,18 @@ export default function Navbar() {
             </div>
       </nav>
     {mobileMenu && 
-      (<div className='flex flex-col md:hidden p-3 bg-slate-100 text-left text-md'>
+      (<div className='flex flex-col md:hidden p-3 bg-amber-200 text-left text-md'>
         {user &&
-          <a href="/" className='p-2 hover:opacity-50'>
-            My Decks
-          </a>
+          <>
+            <a href="/" className='p-2 hover:opacity-50'>
+              My Decks
+            </a>
+          
+            <a href="/decks/public" className='p-2 hover:opacity-50'>
+              Public Decks
+            </a>
+          </>
         }
-          <a href="/decks/public" className='p-2 hover:opacity-50'>
-            Public Decks
-          </a>
           {!user &&
             <>
               <a href='/signin' className='p-2 hover:opacity-50'>

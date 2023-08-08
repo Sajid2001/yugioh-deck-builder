@@ -18,7 +18,7 @@ export default function SignupForm() {
         <h1 className='text-5xl m-6 text-center'>
             Sign Up
         </h1>
-        <form onSubmit={handleSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form onSubmit={handleSubmit} class="bg-amber-200 shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
             Email
@@ -38,7 +38,7 @@ export default function SignupForm() {
             <input value={password} onChange={(e) => setPassword(e.target.value)} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password"/>
         </div>
         <div class="flex items-center justify-between">
-            <button disabled={isLoading} class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button disabled={isLoading} class="transition-all transition-duration-200 ease-in w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
             Sign Up
             </button>
         </div>

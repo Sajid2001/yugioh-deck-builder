@@ -33,7 +33,15 @@ export default function DecksPage() {
   return (
     <div>
       <DeckHero/>
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mx-6 justify-center'>
+      <h2 className='text-left p-3 m-4 text-3xl md:text-5xl'>
+        My Decks
+      </h2>
+      {decks.length === 0 &&
+      <h3 className='font-light text-center text-xl md:text-3xl'>
+        It appears you do not have any decks
+      </h3>
+      }
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mx-12 justify-center'>
         {decks && decks.map(deck => (
           <div key={deck.id}>
             <DeckCard deck={deck}/>

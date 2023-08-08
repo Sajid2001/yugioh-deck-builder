@@ -38,7 +38,7 @@ export default function DeckForm() {
   return (
     <div className="w-full max-w-xs">
         <h2 className='text-3xl font-bold text-center my-3'>Create A New Deck</h2>
-        <form onSubmit={addDeck} method='POST' className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form onSubmit={addDeck} method='POST' className="bg-amber-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                 Name

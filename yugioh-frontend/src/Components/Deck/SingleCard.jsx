@@ -33,7 +33,7 @@ export default function SingleCard({card}) {
   return (
     <div className='m-1 p-2 relative'>
         <img src={card.url} alt="Image" />
-        <div className='absolute top-0 right-0 font-bold bg-teal-200 w-8 text-md p-1 rounded-lg'>{card.quantity}</div>
+        <div className='absolute top-0 right-0 font-bold bg-orange-500 text-white w-8 text-md p-1 rounded-lg'>{card.quantity}</div>
         <button onClick={navigateToCard} className='m-1 bg-slate-100 p-2 rounded-md hover:bg-slate-300 transition-all transition-duration-200 ease-in'>
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
