@@ -36,7 +36,7 @@ Backend:
 * ```YUGIOH_BASE_URL``` = Base URL for the YGOProDeck Api 
 
 Frontend:
-* ```VITE_API_URL``` = Api link to your backend
+* ```VITE_API_URL``` = Your Server URL, whether deployed or on localhost
 
 ## Find Any Bugs?
 
