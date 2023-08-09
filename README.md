@@ -21,7 +21,7 @@ Duel.it is a fully functional and efficient way to create your own Yu-Gi-Oh Deck
 
 ### Deck Creation
 
-https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/84a2b753-301e-4f78-b0cc-28c546b84818
+https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/d4731277-d80d-4861-901d-d1d1e58e885b
 
 ### Card Search
 
