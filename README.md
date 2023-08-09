@@ -19,7 +19,25 @@ Duel.it is a fully functional and efficient way to create your own Yu-Gi-Oh Deck
 
 ## How to use
 
-coming soon
+### Deck Creation
+
+https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/84a2b753-301e-4f78-b0cc-28c546b84818
+
+### Card Search
+
+https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/9e7f40e9-c455-4e9e-933f-60bd888fdd89
+
+### Deck Update
+
+Share your decks with others by setting them public
+
+https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/de35bbc9-b558-4c43-b883-f25237f28f4b
+
+### Card Update
+
+Swap your cards in and out of the side deck easily
+
+https://github.com/Sajid2001/yugioh-deck-builder/assets/60523377/d92c9d50-d061-4f19-97dc-a2814297e16b
 
 ## How to contribute
 1. Download the project and add the environment variables to both the backend and frontend folders (.env in the back and .env.local in the front).
