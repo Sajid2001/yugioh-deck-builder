@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from .jwt_auth import require_auth
-from flask_login import login_required
 from .models import Deck, DeckSection, DeckCard, CardPrice
 from . import db
 import requests
@@ -142,7 +141,8 @@ def all_section_cards(deck_id, section_id):
                         level=level,
                         quantity=quantity,
                         deck_id=deck_id,
-                        section_id=section_id
+                        section_id=section_id,
+                        user_id=request.user_id
                     )
                     db.session.add(new_card)
                     db.session.commit()

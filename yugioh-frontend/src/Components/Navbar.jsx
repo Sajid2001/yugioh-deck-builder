@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useLogout } from '../Hooks/UseLogout'
+import logo from '../assets/puzzle.png'
 
 export default function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -11,8 +12,9 @@ export default function Navbar() {
     setMobileMenu(!mobileMenu)
   }
   return (
-    <header className="bg-amber-300">
+    <header className="bg-amber-300 sticky top-0">
         <nav className="flex justify-between items-center w-[92%] p-4  mx-auto">
+          <img className='h-12 mx-2 rounded-xl' src={logo} alt='logo'/>
             <a href='/' className="font-bold text-xl md:text-3xl hover:opacity-50 transition-all transition-duration-200 ease-in">
               Duel.it
             </a>

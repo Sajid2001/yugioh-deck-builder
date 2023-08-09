@@ -1,22 +1,35 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 export default function Footer() {
+  const user = useSelector((state) => state.user.value)
+
   return (
-    <footer className="bg-amber-200 rounded-lg shadow m-4 dark:bg-gray-800 sticky top-[80vh]">
-    <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <a href="/" className="text-2xl font-bold">Duel.it</a>
-    <ul className="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
-        <li>
-            <a href="/" className="mr-4 hover:underline md:mr-6 ">Home</a>
-        </li>
-        <li>
-            <a href="/" className="mr-4 hover:underline md:mr-6">My Decks</a>
-        </li>
-        <li>
-            <a href="/decks/public" className="mr-4 hover:underline md:mr-6">Public Decks</a>
-        </li>
-    </ul>
-    </div>
-</footer>
+    <section className="bg-[#FDDD6C] mt-[200px]">
+        <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+            <nav className="flex flex-wrap justify-center -mx-5 -my-2">
+                <div className="px-5 py-2">
+                    <a href="/decks/public" className="text-base leading-6 text-red-500 hover:text-red-900 transition-all transition-duration-200 ease-in">
+                        Public Decks
+                    </a>
+                </div>
+                <div className="px-5 py-2">
+                    <a href="/decks" className="text-base leading-6 text-red-500  hover:text-red-900 transition-all transition-duration-200 ease-in">
+                        My Decks
+                    </a>
+                </div>
+                <div className="px-5 py-2">
+                    <a target='_blank' href="https://ygoprodeck.com/" className="text-base leading-6 text-red-500  hover:text-red-900 transition-all transition-duration-200 ease-in">
+                        YGOProDeck API
+                    </a>
+                </div>
+            </nav>
+            <p className="mt-8 text-base leading-6 text-center text-gray-400">
+                <span className='font-bold text-red-500'>
+                  Duel.it Created 2023
+                </span>
+            </p>
+        </div>
+    </section>
   )
 }

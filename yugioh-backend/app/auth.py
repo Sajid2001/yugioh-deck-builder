@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db 
 import re
 from flask_jwt_extended import create_access_token
-#from flask_login import login_user, login_required, logout_user, current_user
 
 
 def create_token(user_id):
@@ -26,18 +25,12 @@ def signin():
         if user:
             if check_password_hash(user.password, password):
                 token = create_token(user.id)
-                #login_user(user, remember=True)
                 return jsonify({"id":user.id,"username": user.username, "token":token }), 200
             else:
                 return jsonify({'error': 'Incorrect Password'}), 400
         else:
             return jsonify({'error': 'User does not exist'}), 400
 
-# @auth.route('/logout')
-# @login_required
-# def logout():
-#     logout_user()
-#     return jsonify({'message':"Logged out"}), 200
 
 @auth.route('/signup', methods = ['POST'])
 def signup():
@@ -67,6 +60,5 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
         token = create_token(new_user.id)
-        #login_user(new_user, remember=True)
 
         return jsonify({"id":new_user.id,"username": username, "token":token}), 200

@@ -1,9 +1,12 @@
-import {useState} from 'react'
+import { useState } from 'react'
+import { useSelector } from 'react-redux';
 import UpdateCardForm from './UpdateCardForm'
+
 
 export default function CardInfo({card}) {
 
     const [formOpened, setFormOpened] = useState(false);
+    const user = useSelector((state) => state.user.value)
 
 
     const handleFormOpen = () => {
@@ -19,7 +22,9 @@ export default function CardInfo({card}) {
             <p className='text-lg text-center mb-3'>Copies In Deck: {card.quantity}</p>
             <p className='text-lg text-center mb-3'>Section: {card.section_id}</p>
             <div className='flex flex-row gap-5'>
+              {card.user_id === user.id &&
               <button onClick={handleFormOpen} className='bg-orange-500 hover:bg-orange-700 transition-all transition-duration-200 ease-in text-white p-3 rounded-lg w-2/3'>Edit</button>
+              }
               <a href={`/deck/${card.deck_id}`} className='text-orange-500 font-bold hover:underline text-center'>Return To Deck</a>
             </div>
           </div>
@@ -32,7 +37,7 @@ export default function CardInfo({card}) {
       </div>
         <div className='flex flex-col p-3 items-center'>
           <div className='bg-amber-200 p-3 rounded-lg px-6'>
-            <h1 className='m-1 p-3 text-center text-5xl font-bold'>{card.name}</h1>
+            <h1 className='m-1 p-3 text-center text-3xl md:text-5xl font-bold'>{card.name}</h1>
             <h4 className='m-2 text-xl text-center'>Level: {card.level}</h4>
             <h4 className='text-xl text-center'>Type: {card.type}</h4>
             <div className='flex fex-row justify-around'>
@@ -41,9 +46,9 @@ export default function CardInfo({card}) {
             </div>
           </div>
           <p className='text-center font-light text-xl my-4 bg-amber-200 p-3 max-w-md rounded-lg'>{card.desc}</p>
-          <div className='flex flex-row justify-center items-center m-4'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-4 items-stretch'>
             {card.prices && card.prices.map(price => (
-              <span key={price.id} className='inline-block bg-amber-200 rounded-lg px-3 py-1 text-xl font-semibold text-gray-700 mr-2 mb-2'>{price.location}: ${price.price}</span>
+              <span key={price.id} className='inline-block bg-amber-200 rounded-lg px-3 py-1 text-md md:text-xl font-semibold'>{price.location}:<br/> ${price.price}</span>
             ))}
           </div>
         </div>

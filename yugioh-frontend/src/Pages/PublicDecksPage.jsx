@@ -41,7 +41,7 @@ export default function PublicDecksPage() {
               It appears that there are no public decks at this time :/ <br/> Try again another time
             </h3>
           }
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mx-6 justify-center'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mx-12 justify-center'>
           {publicDecks.length > 0 && publicDecks.map(deck => (
             <div key={deck.id}>
               <DeckCard deck={deck}/>

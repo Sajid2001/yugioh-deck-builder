@@ -47,6 +47,7 @@ class DeckCard(db.Model):
     quantity = db.Column(db.Integer)
     deck_id = db.Column(db.Integer, db.ForeignKey('deck.id'))
     section_id = db.Column(db.Integer, db.ForeignKey('deck_section.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     prices = db.relationship('CardPrice')
     def serialize(self):
         return{
@@ -61,6 +62,7 @@ class DeckCard(db.Model):
             'quantity': self.quantity,
             'deck_id' :self.deck_id,
             'section_id': self.section_id,
+            'user_id':self.user_id,
             'prices': [price.serialize() for price in self.prices]  
         }
 
@@ -86,3 +88,4 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     decks = db.relationship('Deck')
+    cards = db.relationship('DeckCard')

@@ -59,16 +59,20 @@ export default function SingleDeckPage() {
       <div className="text-3xl text-center font-bold">
         Visibility: {deck.is_public ? "Public" : "Private"}
       </div>
+      {deck.user_id === user.id &&
+
       <div className="m-6 p-3 flex flex-col items-center">
        <UpdateDeckForm id= {id} status = {deck.is_public}/>
       </div>
+    }
     <div className="flex flex-col md:flex-row">
       {sections && sections.map(section => (
         <div key={section.id} className="w-full md:w-1/3 text-center my-3">
-          <Section section={section}/>
+          <Section userId = {deck.user_id} section={section}/>
         </div>
       ))}
     </div>
+    
     </div>
   )
 }

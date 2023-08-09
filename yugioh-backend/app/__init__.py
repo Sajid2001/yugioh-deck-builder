@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path, getenv
 from dotenv import load_dotenv
 from flask_jwt_extended import JWTManager
-#from flask_login import LoginManager
 
 load_dotenv()
 
